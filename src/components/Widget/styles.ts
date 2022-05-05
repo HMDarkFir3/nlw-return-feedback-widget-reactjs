@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { Popover } from "@headlessui/react";
 
-export const Container = styled.div`
+export const Container = styled(Popover)`
   position: absolute;
   bottom: 1.25rem;
   right: 1.25rem;
 
-  button {
+  .popover-button {
     display: flex;
     align-items: center;
     justify-content: center;
