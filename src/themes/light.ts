@@ -9,6 +9,7 @@ export const LIGHT = {
     surfacePimary: "#ffffff",
     surfaceSecondary: "#f4f4f5",
     surfaceSecondaryHover: "#e4e4e7",
+    surfaceShadow: "rgba(0, 0, 0, 0.15)",
     stroke: "#d4d4d8",
     tooltip: "#27272a",
 

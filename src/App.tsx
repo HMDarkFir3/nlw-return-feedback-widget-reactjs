@@ -1,7 +1,7 @@
 import { FC } from "react";
 
-import { Widget } from "./components/Widget";
+import { WidgetButton } from "./components/WidgetButton";
 
 export const App: FC = () => {
-  return <Widget />;
+  return <WidgetButton />;
 };

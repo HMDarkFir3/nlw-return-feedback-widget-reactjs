@@ -6,9 +6,11 @@ export const DARK = {
     brandHover: "#996dff",
     textOnBrandColor: "#ffffff",
 
+    background: "#09090A",
     surfacePrimary: "#181818",
     surfaceSecondary: "#27272a",
     surfaceSecondaryHover: "#3f3f46",
+    surfaceShadow: "rgba(0, 0, 0, 0.15)",
     stroke: "#52525b",
     tooltip: "#f4f4f5",
 

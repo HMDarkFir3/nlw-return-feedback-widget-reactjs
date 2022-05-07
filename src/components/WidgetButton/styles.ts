@@ -2,11 +2,20 @@ import styled from "styled-components";
 import { Popover } from "@headlessui/react";
 
 export const Container = styled(Popover)`
-  position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 
-  .popover-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+
+  @media (min-width: 768px) {
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+  .widget-button-popover-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,20 +30,20 @@ export const Container = styled(Popover)`
 
     color: ${({ theme }) => theme.colors.textOnBrandColor};
 
-    .icon {
+    .icon-chat-teardrop-dots {
       width: 1.5rem;
       height: 1.5rem;
     }
 
     &:hover {
-      span {
+      & span {
         max-width: 20rem;
 
         transition: all ease 0.5s;
       }
     }
 
-    span {
+    & span {
       overflow: hidden;
 
       max-width: 0;
@@ -43,7 +52,7 @@ export const Container = styled(Popover)`
 
       transition: all ease 0.5s;
 
-      span {
+      & span {
         padding-left: 0.5rem;
       }
     }
