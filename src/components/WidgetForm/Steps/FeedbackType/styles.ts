@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const Header = styled.header`
   padding-bottom: 2rem;
 
-  & span {
+  > span {
     font-size: 1.25rem;
     line-height: 1.5rem;
     color: ${({ theme }) => theme.colors.textPrimary};
@@ -22,7 +22,7 @@ export const Card = styled.div`
 
   gap: 0.5rem;
 
-  & button {
+  > button {
     display: flex;
     flex: 1 1 0%;
     flex-direction: column;
@@ -47,8 +47,24 @@ export const Card = styled.div`
       outline: none;
     }
 
-    & span {
+    > span {
       color: ${({ theme }) => theme.colors.textPrimary};
+    }
+  }
+`;
+
+export const Footer = styled.footer`
+  padding-top: 2rem;
+
+  > span {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: ${({ theme }) => theme.colors.textSecondary};
+
+    > a {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      color: ${({ theme }) => theme.colors.textSecondary};
     }
   }
 `;

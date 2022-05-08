@@ -21,20 +21,4 @@ export const Container = styled.div`
   @media (min-width: 768px) {
     width: auto;
   }
-
-  & footer {
-    padding-top: 2rem;
-
-    & span {
-      font-size: 0.75rem;
-      line-height: 1rem;
-      color: ${({ theme }) => theme.colors.textSecondary};
-
-      a {
-        text-decoration: underline;
-        text-underline-offset: 2px;
-        color: ${({ theme }) => theme.colors.textSecondary};
-      }
-    }
-  }
 `;

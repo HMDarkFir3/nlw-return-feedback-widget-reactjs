@@ -1,7 +1,7 @@
 import { useState, FC } from "react";
 
-import { CloseButton } from "../CloseButton";
 import { FeedbackType } from "./Steps/FeedbackType";
+import { FeedbackContent } from "./Steps/FeedbackContent";
 
 import { Container } from "./styles";
 
@@ -40,19 +40,20 @@ export const WidgetForm: FC = () => {
     null
   );
 
+  function handleRestartFeedback() {
+    setFeedbackType(null);
+  }
+
   return (
     <Container>
       {!feedbackType ? (
         <FeedbackType onFeedbackTypeChange={setFeedbackType} />
       ) : (
-        <p>Hello World</p>
+        <FeedbackContent
+          feedbackType={feedbackType}
+          onRestartFeedback={handleRestartFeedback}
+        />
       )}
-
-      <footer>
-        <span>
-          Feito com ♥ pela <a href="http://rocketseat.com.br">Rocketseat</a>{" "}
-        </span>
-      </footer>
     </Container>
   );
 };

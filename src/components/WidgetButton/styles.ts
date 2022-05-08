@@ -36,14 +36,14 @@ export const Container = styled(Popover)`
     }
 
     &:hover {
-      & span {
+      > span {
         max-width: 20rem;
 
         transition: all ease 0.5s;
       }
     }
 
-    & span {
+    > span {
       overflow: hidden;
 
       max-width: 0;
@@ -52,7 +52,7 @@ export const Container = styled(Popover)`
 
       transition: all ease 0.5s;
 
-      & span {
+      > span {
         padding-left: 0.5rem;
       }
     }
