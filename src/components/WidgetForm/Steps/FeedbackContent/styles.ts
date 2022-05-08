@@ -93,34 +93,6 @@ export const Form = styled.form`
 
     margin-top: 0.5rem;
 
-    .button-submit-photo {
-      padding: 0.5rem;
-
-      color: ${({ theme }) => theme.colors.textPrimary};
-
-      background-color: ${({ theme }) => theme.colors.surfaceSecondary};
-      border-radius: 0.25rem;
-
-      transition-property: color, background-color;
-      transition-duration: 0.3s;
-
-      &:hover {
-        background-color: ${({ theme }) => theme.colors.surfaceSecondaryHover};
-      }
-
-      &:focus {
-        outline: none;
-
-        box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.surfacePrimary},
-          0 0 0 4px ${({ theme }) => theme.colors.brand};
-      }
-
-      .icon-camera {
-        width: 1.5rem;
-        height: 1.5rem;
-      }
-    }
-
     .button-submit-feedback {
       flex: 1;
       align-items: center;

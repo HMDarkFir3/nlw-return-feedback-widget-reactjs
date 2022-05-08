@@ -1,7 +1,8 @@
-import { FC } from "react";
-import { ArrowLeft, Camera } from "phosphor-react";
+import { useState, FC } from "react";
+import { ArrowLeft } from "phosphor-react";
 
 import { CloseButton } from "../../../CloseButton";
+import { ScreenshotButton } from "../../ScreenshotButton";
 
 import { feedbackTypes, FeedbackTypeProps } from "../..";
 
@@ -14,6 +15,8 @@ interface Props {
 
 export const FeedbackContent: FC<Props> = (props) => {
   const { feedbackType, onRestartFeedback } = props;
+
+  const [screenshot, setScreenshot] = useState<string | null>(null);
 
   const feedbackTypeInfo = feedbackTypes[feedbackType];
 
@@ -37,9 +40,11 @@ export const FeedbackContent: FC<Props> = (props) => {
         <textarea placeholder="Conte com detalhes o que está acontecendo..." />
 
         <footer>
-          <button className="button-submit-photo" type="button">
-            <Camera className="icon-camera" />
-          </button>
+          <ScreenshotButton
+            screenshot={screenshot}
+            onScreenshotTook={setScreenshot}
+          />
+
           <button className="button-submit-feedback" type="submit">
             Enviar feedback
           </button>
