@@ -120,6 +120,16 @@ export const Form = styled.form`
         box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.surfacePrimary},
           0 0 0 4px ${({ theme }) => theme.colors.brand};
       }
+
+      &:disabled {
+        opacity: 0.5;
+
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: ${({ theme }) => theme.colors.brand};
+        }
+      }
     }
   }
 `;

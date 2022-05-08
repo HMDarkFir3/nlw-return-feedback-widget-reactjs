@@ -2,6 +2,7 @@ import { useState, FC } from "react";
 
 import { FeedbackType } from "./Steps/FeedbackType";
 import { FeedbackContent } from "./Steps/FeedbackContent";
+import { FeedbackSuccess } from "./Steps/FeedbackSuccess";
 
 import { Container } from "./styles";
 
@@ -39,20 +40,33 @@ export const WidgetForm: FC = () => {
   const [feedbackType, setFeedbackType] = useState<FeedbackTypeProps | null>(
     null
   );
+  const [feedbackSent, setFeedbackSent] = useState<boolean>(false);
 
   function handleRestartFeedback() {
     setFeedbackType(null);
+    setFeedbackSent(false);
+  }
+
+  function handleFeedbackSent() {
+    setFeedbackSent(true);
   }
 
   return (
     <Container>
-      {!feedbackType ? (
-        <FeedbackType onFeedbackTypeChange={setFeedbackType} />
+      {feedbackSent ? (
+        <FeedbackSuccess onRestartFeedback={handleRestartFeedback} />
       ) : (
-        <FeedbackContent
-          feedbackType={feedbackType}
-          onRestartFeedback={handleRestartFeedback}
-        />
+        <>
+          {!feedbackType ? (
+            <FeedbackType onFeedbackTypeChange={setFeedbackType} />
+          ) : (
+            <FeedbackContent
+              feedbackType={feedbackType}
+              onRestartFeedback={handleRestartFeedback}
+              onFeedbackSent={handleFeedbackSent}
+            />
+          )}
+        </>
       )}
     </Container>
   );
